@@ -1,4 +1,4 @@
-FROM python:3.8-slim
+FROM python:3.10-slim
 
 # Never prompt the user for choices on installation/configuration of packages
 ENV DEBIAN_FRONTEND noninteractive
@@ -7,12 +7,12 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # Airflow
-ARG AIRFLOW_VERSION=2.0.1
+ARG AIRFLOW_VERSION=2.4.1
 ARG AIRFLOW_USER_HOME=/usr/local/airflow
 ENV AIRFLOW_HOME=${AIRFLOW_USER_HOME}
 ARG AIRFLOW_DEPS=""
 ARG PYTHON_DEPS=""
-ARG PYTHON_VERSION=3.8
+ARG PYTHON_VERSION=3.10
 ARG CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-3.8.txt"
 
 # Define ru_RU.

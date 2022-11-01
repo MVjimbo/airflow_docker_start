@@ -2,7 +2,7 @@ version: "3"
 
 services:
   airflow_db:
-    image: postgres:12-alpine
+    image: postgres:13
     restart: always
     environment:
       POSTGRES_DB: airflow
@@ -27,20 +27,7 @@ services:
     depends_on:
       - airflow_db
 
-  prices_db:
-    image: postgres:12-alpine
-    restart: always
-    environment:
-      POSTGRES_DB: stocks
-      POSTGRES_USER: trader
-      POSTGRES_PASSWORD: income
-    volumes:
-      - prices_database:/var/lib/postgresql/data/
-    ports:
-    - 5433:5432 #5433 указал, чтобы не было конфликтов с первой БД для airflow, которая крутится тоже на 5432
-
 volumes:
-  prices_database:
   airflow_database:
   airflow_data:
   airflow_logs:

@@ -1,6 +1,6 @@
-This is a deployment ready airflow docker images and gitlab-ci/cd.
+This is a deployment ready Airflow docker images and gitlab-ci/cd.
 
-Use next step to run on local machine:
+Use this steps to run on Airflow a local machine:
 
 1. Build images: docker-compose up --build -d
 2. Enter Airflow in docker image: docker exec -ti airflow_docker_start_airflow_1 bash (or /bin/bash for Linux machine)
